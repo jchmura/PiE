@@ -13,14 +13,13 @@ Book = namedtuple('Book', ['id', 'author', 'title', 'genre', 'price', 'publish_d
 def main():
     filename = get_filename(sys.argv)
     tree = ElementTree.parse(filename)
-    books = create_books(tree)
+    books = create_books(tree.getroot())
 
     for book in books:
         print(book)
 
 
-def create_books(tree):
-    root = tree.getroot()
+def create_books(root):
     books = []
 
     for book_tag in root:
