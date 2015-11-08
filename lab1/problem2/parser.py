@@ -40,6 +40,7 @@ def create_books(root):
 
 def convert_attributes(attributes):
     attributes['publish_date'] = datetime.strptime(attributes['publish_date'], DATE_FORMAT)
+    attributes['price'] = float(attributes['price'])
 
     # replace new lines with spaces with single space
     attributes['description'] = re.sub(r'[ \n]+', ' ', attributes['description'])
