@@ -17,7 +17,7 @@ class Configuration:
         try:
             return self.config.get('server', 'ip')
         except (configparser.NoSectionError, configparser.NoOptionError):
-            logging.warning(
+            logger.warn(
                     'No IP specified for the server in the configuration, using {}'.format(self.default_server_ip))
             return self.default_server_ip
 
@@ -26,6 +26,6 @@ class Configuration:
         try:
             return self.config.getint('server', 'port')
         except (configparser.NoSectionError, configparser.NoOptionError):
-            logging.warning(
+            logger.warn(
                     'No port specified for the server in the configuration, using {}'.format(self.default_server_port))
             return self.default_server_port
