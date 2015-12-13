@@ -1,7 +1,7 @@
 import curses
 import logging
 
-from game import Sign
+from common.game import Sign
 
 logger = logging.getLogger(__name__)
 

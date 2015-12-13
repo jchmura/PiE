@@ -3,17 +3,17 @@ import socket
 import time
 from threading import Thread
 
-import configuration
-import message
-from game import Board, Sign
-from socket_wrapper import SocketWrapper
+from common import message
+from common.configuration import Configuration
+from common.game import Board, Sign
+from common.socket_wrapper import SocketWrapper
 
 logger = logging.getLogger(__name__)
 
 
 class Server:
     def __init__(self):
-        self._config = configuration.Configuration()
+        self._config = Configuration()
         self._sock = None
         self._player1 = None
         self._player2 = None

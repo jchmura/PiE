@@ -2,10 +2,11 @@ import logging
 import unittest
 from unittest.mock import patch, Mock
 
-from configuration import Configuration
-from game import Board, Sign
-from message import Message
-from socket_wrapper import SocketWrapper, MSG_SIZE
+from common.configuration import Configuration
+from common.game import Board, Sign
+from common.message import Message
+
+from common.socket_wrapper import SocketWrapper, MSG_SIZE
 
 
 class TestSocketWrapper(unittest.TestCase):

@@ -3,8 +3,8 @@ import logging
 
 import sys
 
-from client import Client
-from server import Server
+from client.client import Client
+from server.server import Server
 
 logging.basicConfig(filename='all.log', level=logging.DEBUG, format='%(asctime)s [%(levelname)s] %(name)s %(message)s')
 

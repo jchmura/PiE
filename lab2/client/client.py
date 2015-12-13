@@ -1,16 +1,17 @@
 import logging
 import socket
 
-import configuration
-from display import Display
-from game import Board
-from message import RoundMessage, EndMessage, BoardMessage
-from socket_wrapper import SocketWrapper
+from common.configuration import Configuration
+from common.game import Board
+from common.message import RoundMessage, EndMessage, BoardMessage
+
+from client.display import Display
+from common.socket_wrapper import SocketWrapper
 
 
 class Client:
     def __init__(self):
-        self._config = configuration.Configuration()
+        self._config = Configuration()
         self._sock = None
         self._board = Board()
         self._display = None
