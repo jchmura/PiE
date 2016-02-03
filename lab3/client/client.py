@@ -3,6 +3,7 @@ import socket
 from enum import Enum
 
 from client.game import ClientGame
+from client.game.more_less import MoreOrLess
 from common.configuration import Configuration
 from common.socket_wrapper import SocketWrapper
 
@@ -10,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 
 class AvailableGame(Enum):
-    pass
+    more_or_less = MoreOrLess
 
 
 class Client:
