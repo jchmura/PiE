@@ -17,6 +17,7 @@ class Server:
         try:
             self._connect()
             while True:
+                logger.debug('Awaiting an user')
                 user = self._accept_user()
                 g = user.receive().payload
                 game = g(user)

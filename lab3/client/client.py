@@ -4,6 +4,7 @@ from enum import Enum
 
 from client.game import ClientGame
 from client.game.more_less import MoreOrLess
+from client.game.tic_tac_toe import TicTacToe
 from common.configuration import Configuration
 from common.socket_wrapper import SocketWrapper
 
@@ -12,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 class AvailableGame(Enum):
     more_or_less = MoreOrLess
+    tic_tac_toe = TicTacToe
 
 
 class Client:
