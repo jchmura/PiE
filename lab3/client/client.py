@@ -47,9 +47,10 @@ class Client:
         while True:
             choice = input('Choice ({}-{}): '.format(1, len(games)))
             if choice.isdigit():
-                break
+                choice = int(choice)
+                if 1 <= choice <= len(games):
+                    break
 
-        choice = int(choice)
         game = games[choice - 1]
         return game.value(self._sock)
 

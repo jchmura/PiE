@@ -19,6 +19,7 @@ class TicTacToe(ClientGame):
         return ServerTicTacToe
 
     def run(self):
+        self._display.start()
         self._display.display_empty_grid()
         self._display.display_title('You are playing with {}'.format(ServerTicTacToe.user_sign))
         while True:
@@ -52,14 +53,16 @@ class Display:
     def __init__(self, sign, board):
         self.sign = sign
         self.board = board
+        self.stdscr = None
+        self._title = ''
+        self._message = ''
+
+    def start(self):
         self.stdscr = curses.initscr()
         curses.noecho()  # don't display keys automatically
         curses.cbreak()  # no enter required
         self.stdscr.keypad(True)  # handle special characters
         self.stdscr.leaveok(False)
-
-        self._title = ''
-        self._message = ''
 
     def exit(self):
         curses.nocbreak()
